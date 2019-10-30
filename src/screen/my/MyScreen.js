@@ -38,7 +38,7 @@ export default class MyScreen extends Component{
 
     onGoSetting=()=>{
         this.props.navigation.navigate("MySetting");
-    }
+    };
 
     render(){
         return (

@@ -67,79 +67,123 @@ export default class HomeScreen extends Component{
                             </View>
                             <View  style={styles.contentTop}>
                                 <View  style={styles.contentTopItem}>
-                                    <View style={styles.contentTopItemImgBox}>
-                                        {/*<Image  style={{width:60, height:60}} source={require('../../assets/images/heyi_top.jpg')}/>*/}
-                                    </View>
-                                    <View>
-                                        <Text style={styles.contentTopItemTitle}>校园外卖</Text>
-                                    </View>
+                                    <TouchableOpacity onPress={()=>{
+                                        this.props.navigation.navigate("SchoolOutSell");
+                                    }}>
+                                        <View style={styles.contentTopItem_View}>
+                                            <View style={styles.contentTopItemImgBox}>
+                                                {/*<Image  style={{width:60, height:60}} source={require('../../assets/images/heyi_top.jpg')}/>*/}
+                                            </View>
+                                            <View>
+                                                <Text style={styles.contentTopItemTitle}>校园外卖</Text>
+                                            </View>
+                                        </View>
+                                    </TouchableOpacity>
                                 </View>
                                 <View  style={styles.contentTopItem}>
-                                    <View style={styles.contentTopItemImgBox}>
-                                        {/*<Image  style={{width:60, height:60}} source={require('../../assets/images/heyi_top.jpg')}/>*/}
-                                    </View>
-                                    <View>
-                                        <Text style={styles.contentTopItemTitle}>代跑腿</Text>
-                                    </View>
+                                    <TouchableOpacity onPress={()=>{
+                                        this.props.navigation.navigate("ReplaceRunLeg");
+                                    }}>
+                                        <View style={styles.contentTopItem_View}>
+                                            <View style={styles.contentTopItemImgBox}>
+                                                {/*<Image  style={{width:60, height:60}} source={require('../../assets/images/heyi_top.jpg')}/>*/}
+                                            </View>
+                                            <View>
+                                                <Text style={styles.contentTopItemTitle}>代跑腿</Text>
+                                            </View>
+                                        </View>
+                                    </TouchableOpacity>
                                 </View>
                                 <View  style={styles.contentTopItem}>
-                                    <View style={styles.contentTopItemImgBox}>
-                                        {/*<Image  style={{width:60, height:60}} source={require('../../assets/images/heyi_top.jpg')}/>*/}
-                                    </View>
-                                    <View>
-                                        <Text style={styles.contentTopItemTitle}>收发快递</Text>
-                                    </View>
+                                    <TouchableOpacity onPress={()=>{
+                                        this.props.navigation.navigate("TransceiverExpress");
+                                    }}>
+                                        <View style={styles.contentTopItem_View}>
+                                            <View style={styles.contentTopItemImgBox}>
+                                                {/*<Image  style={{width:60, height:60}} source={require('../../assets/images/heyi_top.jpg')}/>*/}
+                                            </View>
+                                            <View>
+                                                <Text style={styles.contentTopItemTitle}>收发快递</Text>
+                                            </View>
+                                        </View>
+                                    </TouchableOpacity>
                                 </View>
                                 <View  style={styles.contentTopItem}>
-                                    <View style={styles.contentTopItemImgBox}>
-                                        {/*<Image  style={{width:60, height:60}} source={require('../../assets/images/heyi_top.jpg')}/>*/}
-                                    </View>
-                                    <View>
-                                        <Text style={styles.contentTopItemTitle}>校外兼职</Text>
-                                    </View>
+                                    <TouchableOpacity onPress={()=>{
+                                        this.props.navigation.navigate("SchoolOutPartTime");
+                                    }}>
+                                        <View style={styles.contentTopItem_View}>
+                                            <View style={styles.contentTopItemImgBox}>
+                                                {/*<Image  style={{width:60, height:60}} source={require('../../assets/images/heyi_top.jpg')}/>*/}
+                                            </View>
+                                            <View>
+                                                <Text style={styles.contentTopItemTitle}>校外兼职</Text>
+                                            </View>
+                                        </View>
+                                    </TouchableOpacity>
                                 </View>
                                 <View  style={styles.contentTopItem}>
-                                    <View style={styles.contentTopItemImgBox}>
-                                        {/*<Image  style={{width:60, height:60}} source={require('../../assets/images/heyi_top.jpg')}/>*/}
-                                    </View>
-                                    <View>
-                                        <Text style={styles.contentTopItemTitle}>跳蚤市场</Text>
-                                    </View>
+                                    <TouchableOpacity onPress={()=>{
+                                        this.props.navigation.navigate("FleaMarkets");
+                                    }}>
+                                        <View style={styles.contentTopItem_View}>
+                                            <View style={styles.contentTopItemImgBox}>
+                                                {/*<Image  style={{width:60, height:60}} source={require('../../assets/images/heyi_top.jpg')}/>*/}
+                                            </View>
+                                            <View>
+                                                <Text style={styles.contentTopItemTitle}>跳蚤市场</Text>
+                                            </View>
+                                        </View>
+                                    </TouchableOpacity>
                                 </View>
                                 <View  style={styles.contentTopItem}>
-                                    <View style={styles.contentTopItemImgBox}>
-                                        {/*<Image  style={{width:60, height:60}} source={require('../../assets/images/heyi_top.jpg')}/>*/}
-                                    </View>
-                                    <View>
-                                        <Text style={styles.contentTopItemTitle}>校园论坛</Text>
-                                    </View>
+                                    <TouchableOpacity onPress={()=>{
+                                        this.props.navigation.navigate("SchoolForum");
+                                    }}>
+                                        <View style={styles.contentTopItem_View}>
+                                            <View style={styles.contentTopItemImgBox}>
+                                                {/*<Image  style={{width:60, height:60}} source={require('../../assets/images/heyi_top.jpg')}/>*/}
+                                            </View>
+                                            <View>
+                                                <Text style={styles.contentTopItemTitle}>校园论坛</Text>
+                                            </View>
+                                        </View>
+                                    </TouchableOpacity>
                                 </View>
                                 <View  style={styles.contentTopItem}>
-                                    <View style={styles.contentTopItemImgBox}>
-                                        {/*<Image  style={{width:60, height:60}} source={require('../../assets/images/heyi_top.jpg')}/>*/}
-                                    </View>
-                                    <View>
-                                        <Text style={styles.contentTopItemTitle}>校园创业</Text>
-                                    </View>
+                                    <TouchableOpacity onPress={()=>{
+                                        this.props.navigation.navigate("SchoolPioneer");
+                                    }}>
+                                        <View style={styles.contentTopItem_View}>
+                                            <View style={styles.contentTopItemImgBox}>
+                                                {/*<Image  style={{width:60, height:60}} source={require('../../assets/images/heyi_top.jpg')}/>*/}
+                                            </View>
+                                            <View>
+                                                <Text style={styles.contentTopItemTitle}>校园创业</Text>
+                                            </View>
+                                        </View>
+                                    </TouchableOpacity>
                                 </View>
                                 <View  style={styles.contentTopItem}>
-                                    <View style={styles.contentTopItemImgBox}>
-                                        {/*<Image  style={{width:60, height:60}} source={require('../../assets/images/heyi_top.jpg')}/>*/}
-                                    </View>
-                                    <View>
-                                        <Text style={styles.contentTopItemTitle}>邀请有礼</Text>
-                                    </View>
+                                    <TouchableOpacity onPress={()=>{
+                                        this.props.navigation.navigate("InvitedGift");
+                                    }}>
+                                        <View style={styles.contentTopItem_View}>
+                                            <View style={styles.contentTopItemImgBox}>
+                                                {/*<Image  style={{width:60, height:60}} source={require('../../assets/images/heyi_top.jpg')}/>*/}
+                                            </View>
+                                            <View>
+                                                <Text style={styles.contentTopItemTitle}>邀请有礼</Text>
+                                            </View>
+                                        </View>
+                                    </TouchableOpacity>
                                 </View>
                             </View>
                             <View style={styles.homeContentBox}>
                                 {this.state.data.map((item,index)=>{
                                     return (
                                         <View key={index}>
-                                            <TouchableOpacity
-                                                onPress={()=>{
-                                                    this.viewPartyList(item)
-                                                }}
-                                            >
+                                            <TouchableOpacity>
                                                 <View style={styles.homeContent}>
                                                     <View style={styles.homeContentLeft}>
 
@@ -165,9 +209,6 @@ export default class HomeScreen extends Component{
                                 })}
                             </View>
                         </View>
-                        {/*<TouchableOpacity onPress={this.openDe}>*/}
-                        {/*    <Text>打开侧边栏</Text>*/}
-                        {/*</TouchableOpacity>*/}
                     </View>
                 </ScrollView>
             </View>
@@ -200,6 +241,11 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center',
         // paddingBottom:20
+    },
+    contentTopItem_View:{
+        width:'100%',
+        alignItems:'center',
+        justifyContent:'center',
     },
     contentTopItemImgBox:{
         width:60,

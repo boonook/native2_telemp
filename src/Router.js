@@ -15,6 +15,13 @@ import SettingScreen from './screen/setting/SettingScreen';
 import LoginScreen from './screen/login/LoginScreen';
 import BaiduMap from './screen/baiduMap/BaiduMap';
 import MySetting from './screen/my/commont/MySetting';
+import SchoolOutSellScreen from './screen/home/commont/SchoolOutSellScreen';
+import ReplaceRunLegScreen from './screen/home/commont/ReplaceRunLegScreen';
+import TransceiverExpressScreen from './screen/home/commont/TransceiverExpressScreen';
+import FleaMarketsScreen from './screen/home/commont/FleaMarketsScreen';
+import SchoolForumScreen from './screen/home/commont/SchoolForumScreen';
+import SchoolPioneerScreen from './screen/home/commont/SchoolPioneerScreen';
+import InvitedGiftScreen from './screen/home/commont/InvitedGiftScreen';
 
 const {height,width} =  Dimensions.get('window');
 const other = {
@@ -23,6 +30,30 @@ const other = {
     },
     MySetting:{
         screen:MySetting
+    },
+    SchoolOutSell:{
+        screen:SchoolOutSellScreen
+    },
+    ReplaceRunLeg:{
+        screen:ReplaceRunLegScreen
+    },
+    TransceiverExpress:{
+        screen:TransceiverExpressScreen
+    },
+    SchoolOutPartTime:{
+        screen:SchoolOutSellScreen
+    },
+    FleaMarkets:{
+        screen:FleaMarketsScreen
+    },
+    SchoolForum:{
+        screen:SchoolForumScreen
+    },
+    SchoolPioneer:{
+        screen:SchoolPioneerScreen
+    },
+    InvitedGift:{
+        screen:InvitedGiftScreen
     }
 };
 

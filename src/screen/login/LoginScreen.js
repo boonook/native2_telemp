@@ -38,7 +38,7 @@ export default class LoginScreen extends Component{
 
     ///注册
     onRegistered=()=>{
-
+        this.props.navigation.navigate("PermissionSetting");
     };
 
     ///记住密码

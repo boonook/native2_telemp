@@ -22,6 +22,7 @@ import FleaMarketsScreen from './screen/home/commont/FleaMarketsScreen';
 import SchoolForumScreen from './screen/home/commont/SchoolForumScreen';
 import SchoolPioneerScreen from './screen/home/commont/SchoolPioneerScreen';
 import InvitedGiftScreen from './screen/home/commont/InvitedGiftScreen';
+import PermissionSettingScreen from './screen/permissionSetting/PermissionSettingScreen';
 
 const {height,width} =  Dimensions.get('window');
 const other = {
@@ -54,6 +55,9 @@ const other = {
     },
     InvitedGift:{
         screen:InvitedGiftScreen
+    },
+    PermissionSetting:{
+        screen:PermissionSettingScreen
     }
 };
 

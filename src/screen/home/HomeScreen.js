@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, TouchableOpacity, StyleSheet, ScrollView} from 'react-native';
-import {Icon, Carousel} from '@ant-design/react-native';
+import {Icon, Carousel,Button} from '@ant-design/react-native';
 import {Geolocation} from 'react-native-baidu-map';
 import HeaderScreen from '../../components/header/HeaderScreen';
 
@@ -25,6 +25,10 @@ export default class HomeScreen extends Component{
     };
     componentDidMount(){
         this.getCurrentPosition()
+    };
+
+    onDingwei=()=>{
+        this.props.navigation.navigate("BaiduMap");
     };
 
     ///获取当前位置
@@ -57,6 +61,9 @@ export default class HomeScreen extends Component{
                             )))}
                         </Carousel>
                         <View style={{flex:1,padding:15}}>
+                            <View>
+                                <Button onPress={this.onDingwei}>定位</Button>
+                            </View>
                             <View style={styles.position}>
                                 <View>
                                     <Icon name="environment" size="md" color="red" />

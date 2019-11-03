@@ -5403,10 +5403,10 @@ react-native-android-location-services-dialog-box@^2.8.2:
   resolved "https://registry.yarnpkg.com/react-native-android-location-services-dialog-box/-/react-native-android-location-services-dialog-box-2.8.2.tgz#41d3dd1203cf635a5ef6ee81a1eb75dd20fd5c6f"
   integrity sha512-zBTi0xJQoF6GdImRhXOCXezYuALlPgbctqG3eOrZu63hdrlvTBhqATkb6DB5JM9kpcMbX1skMIOI3m71zKGsPA==
 
-react-native-baidu-map@^1.0.18:
-  version "1.0.18"
-  resolved "https://registry.yarnpkg.com/react-native-baidu-map/-/react-native-baidu-map-1.0.18.tgz#fdf368b3a9842a035bf28512bdf62e276660ab34"
-  integrity sha512-CsKezWKauYBUWn7IV594hF5Tt22Ic5ia20NAWG4usTtyXuv8RJxolZBQZ/+YdZ/U0Z/xzYiViJOO6ItXC/gsCA==
+react-native-baidu-map@^1.0.24:
+  version "1.0.24"
+  resolved "https://registry.yarnpkg.com/react-native-baidu-map/-/react-native-baidu-map-1.0.24.tgz#d5b173edcb80eea09b96d67bd751f269ba76c888"
+  integrity sha512-Tc8UFy6qEtp4s0djiP4Ef/7qZBE2Pvq8aCW+Zj+JOsMDGGhBGbXXwJMFsSbhmTNfrA4nZzXbxvLV06TYefd9+g==
 
 react-native-collapsible@^1.4.0:
   version "1.5.1"

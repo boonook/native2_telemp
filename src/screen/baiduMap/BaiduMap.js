@@ -60,15 +60,19 @@ class BaiduMap extends Component<Props> {
             }
         ],
         latitude:0,
-        longitude:0
+        longitude:0,
+        rand:''
     };
 
     getCurrentPosition=()=>{
-        Geolocation.getCurrentPosition()
+        let vm = this;
+        Geolocation.getCurrentPosition('BD09ll')
             .then((data) => {
-                this.setState({
+                debugger
+                vm.setState({
                     latitude:data.latitude||0,
                     longitude:data.longitude||0,
+                    rand: Math.random()
                 });
             });
     }
@@ -78,7 +82,7 @@ class BaiduMap extends Component<Props> {
     }
 
     onMapStatusChangeFinish=(data)=>{
-        debugger
+
     }
 
     render() {
@@ -103,9 +107,13 @@ class BaiduMap extends Component<Props> {
                         trafficEnabled={true}
                         zoomControlsVisible={false}
                         mapType={MapTypes.NORMAL}
-                        center={{ longitude:this.state.longitude, latitude:this.state.latitude}}
+                        showsUserLocation={true}
+                        locationData={{longitude:this.state.longitude, latitude:this.state.latitude}}
+                        center={{longitude:this.state.longitude, latitude:this.state.latitude,rand:this.state.rand}}
                     >
-                        <Overlay.Marker rotate={45} icon={{ uri: 'https://mapopen-website-wiki.cdn.bcebos.com/homePage/images/logox1.png' }} location={{ longitude:this.state.longitude, latitude:this.state.latitude }} />
+                        <Overlay.Marker rotate={45}
+                                        icon={{ uri: 'https://mapopen-website-wiki.cdn.bcebos.com/homePage/images/logox1.png' }}
+                                        location={{ longitude:this.state.longitude, latitude:this.state.latitude}} />
                     </MapView>
                 </View>
             </View>

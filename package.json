@@ -20,7 +20,7 @@
     "react": "16.9.0",
     "react-native": "0.61.2",
     "react-native-android-location-services-dialog-box": "^2.8.2",
-    "react-native-baidu-map": "^1.0.18",
+    "react-native-baidu-map": "^1.0.24",
     "react-native-device-info": "^4.0.1",
     "react-native-gesture-handler": "^1.4.1",
     "react-native-image-picker": "^1.1.0",

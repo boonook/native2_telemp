@@ -159,18 +159,19 @@ export default class MySetting extends Component{
                         visible={this.state.visible}
                         animationType="slide-up"
                         onClose={this.onClose}
+                        style={{backgroundColor:'transparent'}}
                     >
-                        <View style={{ paddingVertical: 20, paddingHorizontal: 20 }}>
+                        <View style={{margin:15}}>
                             <TouchableOpacity onPress={this.onClearSpaceSure}>
                                 <View style={styles.cancel}>
-                                    <Text style={{ textAlign: 'center',color:'red' }}>确定</Text>
+                                    <Text style={{ textAlign: 'center',color:'red',fontSize:16 }}>确定</Text>
                                 </View>
                             </TouchableOpacity>
                         </View>
                         <View style={styles.cancelBox}>
                             <TouchableOpacity onPress={this.onClose}>
                                 <View style={styles.cancel}>
-                                    <Text style={{textAlign:'center'}}>取消</Text>
+                                    <Text style={{textAlign:'center',fontSize:16 }}>取消</Text>
                                 </View>
                             </TouchableOpacity>
                         </View>
@@ -258,12 +259,13 @@ const styles = StyleSheet.create({
         paddingBottom:150
     },
     cancel:{
-        padding:15,
+        padding:20,
+        backgroundColor:'#fff',
+        borderRadius:8,
     },
     cancelBox:{
         paddingBottom:20,
-        borderColor:'#f4f4f4',
-        borderStyle:'solid',
-        borderTopWidth:1
+        paddingLeft:15,
+        paddingRight:15
     },
 })

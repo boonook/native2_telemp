@@ -41,12 +41,16 @@ export default class HomeScreen extends Component{
                     city:data.city||''
                 });
             });
+    };
+
+    onOpenDrawerNavigator=()=>{
+        this.props.navigation.openDrawer();
     }
 
     render(){
         return (
             <View style={{flex:1}}>
-                <HeaderScreen title={'首页'}/>
+                <HeaderScreen openDrawerNavigator={this.onOpenDrawerNavigator} headerLeftStatus={true} title={'首页'}/>
                 <ScrollView>
                     <View style={{flex:1}}>
                         <Carousel  style={styles.wrapper}

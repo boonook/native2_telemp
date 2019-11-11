@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View,StyleSheet,StatusBar, Dimensions, Platform,TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, StatusBar, Dimensions, Platform, TouchableOpacity, Image} from 'react-native';
 export let screenW = Dimensions.get('window').width;
 export let screenH = Dimensions.get('window').height;
 // iPhoneX
@@ -29,7 +29,8 @@ export default class HeaderScreen extends Component{
         this.state = {
             headerStyle:{},
             headerRightStatus:false,
-            headerRightTitle:null
+            headerRightTitle:null,
+            headerLeftStatus:false
         };
     }
 
@@ -58,6 +59,19 @@ export default class HeaderScreen extends Component{
                 headerRightTitle:this.props.headerRightTitle
             })
         }
+        if(this.props.headerLeftStatus===undefined){
+            this.setState({
+                headerLeftStatus:false,
+            })
+        }else{
+            this.setState({
+                headerLeftStatus:true,
+            })
+        }
+    }
+
+    openDrawerNavigator=()=>{
+        this.props.openDrawerNavigator();
     }
 
     render(){
@@ -66,7 +80,13 @@ export default class HeaderScreen extends Component{
                 <StatusBar backgroundColor={'#fff'} barStyle="dark-content"/>
                 <View style={this.state.headerStyle}>
                     <View style={styles.headerLeft}>
-                        <Text></Text>
+                        {this.state.headerLeftStatus? <TouchableOpacity onPress={()=>{
+                            this.openDrawerNavigator()
+                        }}>
+                            <View style={styles.img_box}>
+                                <Image style={{width:60, height:60}} source={require('../../assets/images/heyi.jpg')}/>
+                            </View>
+                        </TouchableOpacity>:null}
                     </View>
                     <View style={styles.flex1}>
                         <Text style={styles.title}>{this.props.title}</Text>
@@ -142,5 +162,11 @@ const styles = StyleSheet.create({
         textAlign:'center',
         justifyContent:'center',
         alignItems:'center'
+    },
+    img_box:{
+        width:30,
+        height:30,
+        borderRadius:15,
+        overflow:'hidden'
     }
 });

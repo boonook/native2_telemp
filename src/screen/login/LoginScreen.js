@@ -4,6 +4,7 @@ import {Button, Icon, Modal, Provider, Checkbox,InputItem} from '@ant-design/rea
 import{ImageCache}from"react-native-img-cache";
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view'
 import RNFetchBlob from "rn-fetch-blob";
+import {NavigationActions} from "react-navigation";
 const {height,width} =  Dimensions.get('window');
 
 export default class LoginScreen extends Component{
@@ -29,7 +30,7 @@ export default class LoginScreen extends Component{
     };
 
     onLogin=()=>{
-        this.props.navigation.navigate("Home");
+        this.props.navigation.reset([NavigationActions.navigate({ routeName: 'Home' })]);
     };
 
     onGoBaiduMap=()=>{

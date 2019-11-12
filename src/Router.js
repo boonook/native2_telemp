@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text,ScrollView,Dimensions,TouchableOpacity } from 'react-native';
+import {StyleSheet, Text,ScrollView,Dimensions,TouchableOpacity,View } from 'react-native';
 import{CachedImage}from"react-native-img-cache";
 import {
     createAppContainer
@@ -23,6 +23,10 @@ import SchoolForumScreen from './screen/home/commont/SchoolForumScreen';
 import SchoolPioneerScreen from './screen/home/commont/SchoolPioneerScreen';
 import InvitedGiftScreen from './screen/home/commont/InvitedGiftScreen';
 import PermissionSettingScreen from './screen/permissionSetting/PermissionSettingScreen';
+import DrawerScreen from './screen/drawer/DrawerScreen';
+import ImageZoomViewerScreen from './components/imageZoomViewer/ImageZoomViewerScreen';
+import ErWeiCodeScreen from './components/erWeiCode/ErWeiCodeScreen';
+import CountScreen from './components/count/CountScreen';
 
 const {height,width} =  Dimensions.get('window');
 const other = {
@@ -58,6 +62,15 @@ const other = {
     },
     PermissionSetting:{
         screen:PermissionSettingScreen
+    },
+    ImageZoomViewerScreen:{
+        screen:ImageZoomViewerScreen
+    },
+    ErWeiCodeScreen:{
+        screen:ErWeiCodeScreen
+    },
+    CountScreen:{
+        screen:CountScreen
     }
 };
 
@@ -144,23 +157,26 @@ const DrawerNavigator =  createDrawerNavigator({
     }
 },{
     initialRouteName: 'Home',
-    drawerWidth:  width-100, // 展示的宽度
+    drawerWidth:  width, // 展示的宽度
     drawerPosition: 'left', // 抽屉在左边还是右边
     contentComponent: props => (<CustomDrawerContentComponent {...props} />)
 });
 
 const CustomDrawerContentComponent = props => {
     return (
-        <ScrollView style={{flex: 1,backgroundColor:'#fff'}}>
-            <TouchableOpacity
-                style={styles.btnStyle}
-                onPress={() => props.navigation.navigate("Settings")}
-            >
-                <Text style={{fontSize:18}}>设置</Text>
-            </TouchableOpacity>
-        </ScrollView>
+        <DrawerScreen props={props}/>
     )
 };
+{/*<ScrollView style={{flex: 1,backgroundColor:'#f4f4f4'}}>*/}
+{/*    <View style={{paddingTop:40}}>*/}
+{/*        <TouchableOpacity*/}
+{/*            style={styles.btnStyle}*/}
+{/*            onPress={() => props.navigation.navigate("Settings")}*/}
+{/*        >*/}
+{/*            <Text style={{fontSize:18}}>设置222</Text>*/}
+{/*        </TouchableOpacity>*/}
+{/*    </View>*/}
+{/*</ScrollView>*/}
 
 const  StackNavigator = createStackNavigator({
     Login:{

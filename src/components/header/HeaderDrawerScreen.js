@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, StatusBar, Dimensions, Platform, TouchableOpacity, Image} from 'react-native';
+import {Text, View, StyleSheet, StatusBar, Dimensions, Platform, TouchableOpacity} from 'react-native';
+import {Icon} from '@ant-design/react-native';
 export let screenW = Dimensions.get('window').width;
 export let screenH = Dimensions.get('window').height;
 // iPhoneX
@@ -18,7 +19,7 @@ export function isIphoneX() {
     )
 }
 
-export default class HeaderScreen extends Component{
+export default class HeaderDrawerScreen extends Component{
     static navigationOptions = ({ navigation }) => {
         return {
             header: () => null, // 隐藏头部
@@ -28,9 +29,6 @@ export default class HeaderScreen extends Component{
         super(props);
         this.state = {
             headerStyle:{},
-            headerRightStatus:false,
-            headerRightTitle:null,
-            headerLeftStatus:false
         };
     }
 
@@ -70,9 +68,9 @@ export default class HeaderScreen extends Component{
         }
     }
 
-    openDrawerNavigator=()=>{
-        this.props.openDrawerNavigator();
-    }
+    onClose=()=>{
+        this.props.onClose();
+    };
 
     render(){
         return(
@@ -80,20 +78,16 @@ export default class HeaderScreen extends Component{
                 <StatusBar backgroundColor={'#fff'} barStyle="dark-content"/>
                 <View style={this.state.headerStyle}>
                     <View style={styles.headerLeft}>
-                        {this.state.headerLeftStatus? <TouchableOpacity onPress={()=>{
-                            this.openDrawerNavigator()
-                        }}>
-                            <View style={styles.img_box}>
-                                <Image style={{width:30, height:30}} source={require('../../assets/images/heyi.jpg')}/>
-                            </View>
-                        </TouchableOpacity>:null}
+                        <Text></Text>
                     </View>
                     <View style={styles.flex1}>
-                        <Text style={styles.title}>{this.props.title}</Text>
+                        <Text style={styles.title}></Text>
                     </View>
                     <View style={styles.headerLeft}>
-                        <TouchableOpacity>
-                            {this.state.headerRightStatus?<Text style={styles.title_right}>{this.state.headerRightTitle}</Text>:null}
+                        <TouchableOpacity onPress={()=>{
+                            this.onClose()
+                        }}>
+                            <Icon name="close" size="md" color="#444" />
                         </TouchableOpacity>
                     </View>
                 </View>

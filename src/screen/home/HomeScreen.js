@@ -27,10 +27,6 @@ export default class HomeScreen extends Component{
         this.getCurrentPosition()
     };
 
-    onDingwei=()=>{
-        this.props.navigation.navigate("BaiduMap");
-    };
-
     ///获取当前位置
     getCurrentPosition=()=>{
         Geolocation.getCurrentPosition()
@@ -65,9 +61,6 @@ export default class HomeScreen extends Component{
                             )))}
                         </Carousel>
                         <View style={{flex:1,padding:15}}>
-                            <View>
-                                <Button onPress={this.onDingwei}>定位</Button>
-                            </View>
                             <View style={styles.position}>
                                 <View>
                                     <Icon name="environment" size="md" color="red" />

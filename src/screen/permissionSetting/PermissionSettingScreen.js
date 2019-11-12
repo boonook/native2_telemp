@@ -7,12 +7,20 @@ import {
     ToastAndroid,
     PermissionsAndroid,
 } from 'react-native'
+import HeaderDetailScreen from '../../components/header/HeaderDetailScreen';
 
 export default class PermissionSettingScreen extends Component {
+
+    onGoBaCK=()=>{
+        this.props.navigation.goBack();
+    };
 
     render() {
         return (
             <View style={styles.container}>
+                <HeaderDetailScreen  goBack={()=>{
+                    this.onGoBaCK()
+                }} title={'权限管理'}/>
                 <TouchableOpacity style={styles.button_view}
                                   onPress={this.requestReadPermission.bind(this)}>
                     <Text style={styles.button_text}>申请读写权限</Text>
@@ -168,7 +176,7 @@ const styles = StyleSheet.create({
     button_view: {
         margin:4,
         borderRadius: 4,
-        backgroundColor: '#8d4dfc',
+        backgroundColor: '#ccc',
         alignItems: 'center',
     },
     button_text: {

@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {Text, View,StyleSheet} from 'react-native';
+import HeaderDetailScreen from '../header/HeaderDetailScreen';
 
-export default class SettingScreen extends Component{
+export default class CountScreen extends Component{
     static navigationOptions = ({ navigation }) => {
         return {
             header: () => null, // 隐藏头部
@@ -19,21 +20,25 @@ export default class SettingScreen extends Component{
     componentDidMount(){
 
     };
+
+    onGoBaCK=()=>{
+        this.props.navigation.goBack();
+    };
+
     render(){
         return (
-            <View>
-                <View style={styles.drawerBox}>
-
-                </View>
-                <Text>设置111</Text>
+            <View style={styles.countBox}>
+                <HeaderDetailScreen title={'统计'} goBack={()=>{
+                    this.onGoBaCK()
+                }}/>
+                <Text>统计图</Text>
             </View>
         )
     }
 }
 
 const styles=StyleSheet.create({
-    drawerBox:{
-        height:100,
-        backgroundColor:'#f4f4f4'
+    countBox:{
+        flex:1
     }
 })

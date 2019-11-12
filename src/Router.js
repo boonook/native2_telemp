@@ -74,6 +74,9 @@ const other = {
     }
 };
 
+/**
+ * 普通用户的底部导航
+ * **/
 const appTabNavigator = createBottomTabNavigator({
     Home:{
         screen:HomeScreen,
@@ -142,6 +145,51 @@ const appTabNavigator = createBottomTabNavigator({
     }
 });
 
+/***
+ * 专家登陆的底部导航
+ * ****/
+const expertAppTabNavigator = createBottomTabNavigator({
+    Home:{
+        screen:HomeScreen,
+        navigationOptions: () => ({
+            tabBarLabel: '首页',
+            tabBarIcon: ({ focused,tintColor }) => {
+                if(focused){
+                    return <CachedImage source={require('./assets/images/tab/Tab_icon_home_pre.png')}  style={[styles.tabBarImage]}/>
+                }else{
+                    return <CachedImage source={require('./assets/images/tab/Tab_icon_home_nor.png')}  style={[styles.tabBarImage]}/>
+                }
+                // tintColor传递进来的是颜色，选中的颜色,那么图标颜色也要换
+
+            }
+        })
+    },
+    my:{
+        screen:MyScreen,
+        navigationOptions: () => ({
+            tabBarLabel: '我的',
+            tabBarIcon: ({ focused,tintColor }) => {
+                if(focused){
+                    return <CachedImage source={require('./assets/images/tab/Tab_icon_mine_pre.png')}  style={[styles.tabBarImage]}/>
+                }else{
+                    return <CachedImage source={require('./assets/images/tab/Tab_icon_mine_nor.png')}  style={[styles.tabBarImage]}/>
+                }
+            }
+        })
+    }
+},{
+    initialRouteName: 'Home',
+    tabBarPosition: 'bottom',
+    lazy: false,//懒加载
+    swipeEnabled: false,
+    tabBarOptions: {
+        activeTintColor: '#d71e31',
+        style: {
+            backgroundColor: '#fff',
+        },
+    }
+})
+
 const DrawerNavigator =  createDrawerNavigator({
     Home:{
         screen:appTabNavigator
@@ -161,6 +209,26 @@ const DrawerNavigator =  createDrawerNavigator({
     drawerPosition: 'left', // 抽屉在左边还是右边
     contentComponent: props => (<CustomDrawerContentComponent {...props} />)
 });
+
+const ExpertDrawerNavigator =  createDrawerNavigator({
+    expertHome:{
+        screen:expertAppTabNavigator
+    },
+    Settings:{
+        screen:SettingScreen,
+        navigationOptions: {
+            drawerLabel:'Setting',
+            drawerIcon:({tintColor})=>(
+                <CachedImage name={'drafts'} size={24} source={require('./assets/images/tab/Tab_icon_home_nor.png')}  style={[styles.tabBarImage,{tintColor: tintColor}]}/>
+            )
+        }
+    }
+},{
+    initialRouteName: 'expertHome',
+    drawerWidth:  width, // 展示的宽度
+    drawerPosition: 'left', // 抽屉在左边还是右边
+    contentComponent: props => (<CustomDrawerContentComponent {...props} />)
+})
 
 const CustomDrawerContentComponent = props => {
     return (
@@ -184,6 +252,9 @@ const  StackNavigator = createStackNavigator({
     },
     Home:{
         screen:DrawerNavigator,
+    },
+    expertHome:{
+        screen:ExpertDrawerNavigator
     },
     ...other
 },{

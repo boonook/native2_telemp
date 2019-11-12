@@ -30,7 +30,14 @@ export default class LoginScreen extends Component{
     };
 
     onLogin=()=>{
+        /**
+         * 普通用户登陆
+         * **/
         this.props.navigation.reset([NavigationActions.navigate({ routeName: 'Home' })]);
+        /**
+         * 专家登陆
+         * **/
+        // this.props.navigation.reset([NavigationActions.navigate({ routeName: 'expertHome' })]);
     };
 
     onGoBaiduMap=()=>{

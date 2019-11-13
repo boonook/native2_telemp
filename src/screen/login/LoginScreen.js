@@ -26,18 +26,22 @@ export default class LoginScreen extends Component{
 
     };
     componentDidMount(){
-        this.getSize();
+
     };
 
     onLogin=()=>{
-        /**
-         * 普通用户登陆
-         * **/
-        this.props.navigation.reset([NavigationActions.navigate({ routeName: 'Home' })]);
-        /**
-         * 专家登陆
-         * **/
-        // this.props.navigation.reset([NavigationActions.navigate({ routeName: 'expertHome' })]);
+        console.log(this.state.userName);
+        if(this.state.userName+''==='admin'){
+            /**
+             * 专家登陆
+             * **/
+            this.props.navigation.reset([NavigationActions.navigate({ routeName: 'expertHome' })]);
+        }else{
+            /**
+             * 普通用户登陆
+             * **/
+            this.props.navigation.reset([NavigationActions.navigate({ routeName: 'Home' })]);
+        }
     };
 
     onGoBaiduMap=()=>{
@@ -52,59 +56,6 @@ export default class LoginScreen extends Component{
     ///记住密码
     onRememberPassword=()=>{
 
-    }
-
-    getSize=()=>{
-        RNFetchBlob.fs.lstat(RNFetchBlob.fs.dirs.CacheDir + '/react-native-img-cache')
-            .then((stats) => {
-                console.log(stats);
-                let bytes = 0;
-                stats.map(f => {
-                    bytes += Number(f.size);
-                });
-                let cacheSize = this.bytesToSize(bytes);
-                this.setState({
-                    cacheSize
-                })
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-    }
-
-    bytesToSize(bytes) {
-        if (bytes === 0) {
-            return '0 B';
-        }
-
-        let k = 1024;
-
-        let sizes = ['B','KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
-
-        let i = Math.floor(Math.log(bytes) / Math.log(k));
-
-        let num = bytes / Math.pow(k, i);
-        return num.toPrecision(3) + ' ' + sizes[i];
-    }
-
-    ///清理缓存
-    onClearSpace=()=>{
-        Modal.alert('提醒', '你确定要清除缓存吗？', [
-            {
-                text: '取消',
-                onPress: () => {
-                    // console.log('cancel')
-                },
-                style: '确定',
-            },
-            { text: '确定', onPress: () =>{
-                    ImageCache.get().clear();
-                    this.setState({
-                        cacheSize:'0'
-                    })
-                }},
-        ]);
-        console.log('清理缓存')
     }
 
     render(){
@@ -174,6 +125,7 @@ export default class LoginScreen extends Component{
                                         </TouchableOpacity>
                                     </View>
                                 </View>
+                                <View style={{padding:15}}><Text style={{color:'red'}}>专家请登录：admin,游客可直接登录</Text></View>
                                 <View style={styles.loginInput}>
                                     <Button
                                         loading={this.state.disabled}

@@ -43,9 +43,9 @@ export default class MyScreen extends Component{
     render(){
         return (
             <Provider>
-                <View style={{flex:1,}}>
+                <View style={{flex:1,backgroundColor:'#f4f4f4'}}>
                     <HeaderScreen title={'我的'}/>
-                    <View style={{flex:1,padding:15}}>
+                    <View style={{flex:1}}>
                         <View style={styles.header}>
                             <TouchableOpacity onPress={()=>{
                                 this.onSelectImg
@@ -128,7 +128,9 @@ const styles = StyleSheet.create({
         paddingBottom:15,
         borderColor:'#f4f4f4',
         borderStyle:'solid',
-        alignItems:'center'
+        alignItems:'center',
+        backgroundColor:'#fff',
+        padding:15
     },
     headerLeft:{
        width:88,
@@ -150,7 +152,8 @@ const styles = StyleSheet.create({
         lineHeight:24
     },
     content:{
-        paddingTop:15
+        padding:15,
+        backgroundColor:'#fff',
     },
     contentTop:{
         flexDirection:'row'
@@ -174,9 +177,6 @@ const styles = StyleSheet.create({
     },
     footer:{
         flexDirection:'row',
-        borderBottomWidth:1,
-        borderColor:'#ccc',
-        borderStyle: 'solid',
         paddingTop:15,
         paddingBottom:15
     },

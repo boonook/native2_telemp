@@ -130,7 +130,7 @@ export default class DrawerScreen extends Component{
                                 <Icon name="issues-close" size="md" color="#444" />
                             </View>
                             <View style={{flex:1,paddingLeft:15}}>
-                                <Text>统计(待开发)</Text>
+                                <Text>统计</Text>
                             </View>
                             <View>
                                 <Icon name="right" size="md" color="#444" />
@@ -147,6 +147,19 @@ export default class DrawerScreen extends Component{
                             </View>
                             <View style={{flex:1,paddingLeft:15}}>
                                 <Text>设置(待开发)</Text>
+                            </View>
+                            <View>
+                                <Icon name="right" size="md" color="#444" />
+                            </View>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <View style={{flex:1,flexDirection:'row',alignItems:'center',paddingTop:15,paddingBottom:15}}>
+                            <View>
+                                <Icon name="issues-close" size="md" color="#444" />
+                            </View>
+                            <View style={{flex:1,paddingLeft:15}}>
+                                <Text>动态底部导航菜单</Text>
                             </View>
                             <View>
                                 <Icon name="right" size="md" color="#444" />

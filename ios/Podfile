@@ -52,4 +52,7 @@ target 'baiduMap' do
 
   pod 'react-native-webview', :path => '../node_modules/react-native-webview'
 
+
+  pod 'RNFS', :path => '../node_modules/react-native-fs'
+
 end

@@ -76,13 +76,16 @@ export default class DrawerScreen extends Component{
                             </View>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>{
+                        this.props.props.navigation.toggleDrawer();
+                        this.props.props.navigation.navigate("MoreImgUploadScreen")
+                    }}>
                         <View style={{flex:1,flexDirection:'row',alignItems:'center',paddingTop:15,paddingBottom:15}}>
                             <View>
                                 <Icon name="issues-close" size="md" color="#444" />
                             </View>
                             <View style={{flex:1,paddingLeft:15}}>
-                                <Text>多图片上传(待开发)</Text>
+                                <Text>多图片上传</Text>
                             </View>
                             <View>
                                 <Icon name="right" size="md" color="#444" />
@@ -137,7 +140,7 @@ export default class DrawerScreen extends Component{
                             </View>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity  onPress={() => {
+                    <TouchableOpacity onPress={() => {
                         this.props.props.navigation.toggleDrawer();
                         this.props.props.navigation.navigate("Settings")
                     }}>
@@ -160,6 +163,38 @@ export default class DrawerScreen extends Component{
                             </View>
                             <View style={{flex:1,paddingLeft:15}}>
                                 <Text>动态底部导航菜单</Text>
+                            </View>
+                            <View>
+                                <Icon name="right" size="md" color="#444" />
+                            </View>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => {
+                        this.props.props.navigation.toggleDrawer();
+                        this.props.props.navigation.navigate("FilesManageScreen")
+                    }}>
+                        <View style={{flex:1,flexDirection:'row',alignItems:'center',paddingTop:15,paddingBottom:15}}>
+                            <View>
+                                <Icon name="issues-close" size="md" color="#444" />
+                            </View>
+                            <View style={{flex:1,paddingLeft:15}}>
+                                <Text>文件管理（待开发）</Text>
+                            </View>
+                            <View>
+                                <Icon name="right" size="md" color="#444" />
+                            </View>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => {
+                        this.props.props.navigation.toggleDrawer();
+                        this.props.props.navigation.navigate("LeftSwiper")
+                    }}>
+                        <View style={{flex:1,flexDirection:'row',alignItems:'center',paddingTop:15,paddingBottom:15}}>
+                            <View>
+                                <Icon name="issues-close" size="md" color="#444" />
+                            </View>
+                            <View style={{flex:1,paddingLeft:15}}>
+                                <Text>侧滑组件</Text>
                             </View>
                             <View>
                                 <Icon name="right" size="md" color="#444" />

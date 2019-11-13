@@ -101,9 +101,9 @@ const styles = StyleSheet.create({
         height:50,
         flexDirection: 'row',
         backgroundColor: '#fff',
-        borderBottomColor:'#f4f4f4',
-        borderBottomWidth:1,
-        borderStyle:'solid',
+        // borderBottomColor:'#f4f4f4',
+        // borderBottomWidth:1,
+        // borderStyle:'solid',
         alignItems:'center',
     },
     headerNoIos: {
@@ -111,9 +111,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         backgroundColor: '#fff',
         paddingTop:20,
-        borderBottomColor:'#f4f4f4',
-        borderBottomWidth:1,
-        borderStyle:'solid',
+        // borderBottomColor:'#f4f4f4',
+        // borderBottomWidth:1,
+        // borderStyle:'solid',
         alignItems:'center',
     },
     headeriIos:{
@@ -122,9 +122,9 @@ const styles = StyleSheet.create({
         alignItems:'center',
         backgroundColor: '#fff',
         paddingTop:30,
-        borderBottomColor:'#f4f4f4',
-        borderBottomWidth:1,
-        borderStyle:'solid'
+        // borderBottomColor:'#f4f4f4',
+        // borderBottomWidth:1,
+        // borderStyle:'solid'
     },
     flex1: {
         flex: 1,
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
         borderRadius: 20
     },
     title: {
-        fontSize: 20,
+        fontSize: 16,
         color: '#444'
     },
     title_right:{

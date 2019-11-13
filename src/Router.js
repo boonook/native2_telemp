@@ -27,6 +27,9 @@ import DrawerScreen from './screen/drawer/DrawerScreen';
 import ImageZoomViewerScreen from './components/imageZoomViewer/ImageZoomViewerScreen';
 import ErWeiCodeScreen from './components/erWeiCode/ErWeiCodeScreen';
 import CountScreen from './components/count/CountScreen';
+import MoreImgUploadScreen from './components/moreImgUpload/MoreImgUploadScreen';
+import FilesManageScreen from './components/filesManage/FilesManageScreen';
+import LeftSwiperScreen from './components/leftSwiper/LeftSwiperScreen';
 
 const {height,width} =  Dimensions.get('window');
 const other = {
@@ -71,6 +74,15 @@ const other = {
     },
     CountScreen:{
         screen:CountScreen
+    },
+    MoreImgUploadScreen:{
+        screen:MoreImgUploadScreen
+    },
+    FilesManageScreen:{
+        screen:FilesManageScreen
+    },
+    LeftSwiper:{
+        screen:LeftSwiperScreen
     }
 };
 

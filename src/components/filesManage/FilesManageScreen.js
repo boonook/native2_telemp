@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Text, View,StyleSheet} from 'react-native';
+import RNFS from 'react-native-fs'
 import HeaderDetailScreen from '../header/HeaderDetailScreen';
+const ExternalDirectoryPath = RNFS.ExternalDirectoryPath;
 
 export default class FilesManageScreen extends Component{
     static navigationOptions = ({ navigation }) => {
@@ -18,7 +20,7 @@ export default class FilesManageScreen extends Component{
 
     };
     componentDidMount(){
-
+        console.log(ExternalDirectoryPath)
     };
 
     onGoBaCK=()=>{

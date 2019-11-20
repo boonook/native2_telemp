@@ -30,6 +30,7 @@ import CountScreen from './components/count/CountScreen';
 import MoreImgUploadScreen from './components/moreImgUpload/MoreImgUploadScreen';
 import FilesManageScreen from './components/filesManage/FilesManageScreen';
 import LeftSwiperScreen from './components/leftSwiper/LeftSwiperScreen';
+import TongxunLogsScreen from './components/tongxunLogs/TongxunLogsScreen';
 
 const {height,width} =  Dimensions.get('window');
 const other = {
@@ -83,6 +84,9 @@ const other = {
     },
     LeftSwiper:{
         screen:LeftSwiperScreen
+    },
+    TongxunLogs:{
+        screen:TongxunLogsScreen
     }
 };
 

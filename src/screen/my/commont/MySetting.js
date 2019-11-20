@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, TouchableOpacity,StyleSheet} from 'react-native';
-import {Button, Modal,Provider} from '@ant-design/react-native';
+import {Modal,Provider} from '@ant-design/react-native';
 import {showImagePicker} from '../../../utils/tools';
 import RNFetchBlob from 'rn-fetch-blob';
 import {ImageCache} from 'react-native-img-cache';

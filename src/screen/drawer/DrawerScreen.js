@@ -43,7 +43,7 @@ export default class DrawerScreen extends Component{
                         <Text numberOfLines={1}>三人行必有我师,三人行必有我师三人行必有我师三人行必有我师</Text>
                     </View>
                 </View>
-                <ScrollView style={{flex:1,padding:15}}>
+                <ScrollView style={{flex:1,paddingTop:15,paddingLeft:15,paddingRight:15}}>
                     <TouchableOpacity onPress={()=>{
                         this.props.props.navigation.toggleDrawer();
                         this.props.props.navigation.navigate("ErWeiCodeScreen")
@@ -201,6 +201,41 @@ export default class DrawerScreen extends Component{
                             </View>
                         </View>
                     </TouchableOpacity>
+                    <TouchableOpacity onPress={() => {
+                        this.props.props.navigation.toggleDrawer();
+                        this.props.props.navigation.navigate("LeftSwiper")
+                    }}>
+                        <View style={{flex:1,flexDirection:'row',alignItems:'center',paddingTop:15,paddingBottom:15}}>
+                            <View>
+                                <Icon name="issues-close" size="md" color="#444" />
+                            </View>
+                            <View style={{flex:1,paddingLeft:15}}>
+                                <Text>我的消息</Text>
+                            </View>
+                            <View>
+                                <Icon name="right" size="md" color="#444" />
+                            </View>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => {
+                        this.props.props.navigation.toggleDrawer();
+                        this.props.props.navigation.navigate("TongxunLogs")
+                    }}>
+                        <View style={{flex:1,flexDirection:'row',alignItems:'center',paddingTop:15,paddingBottom:15}}>
+                            <View>
+                                <Icon name="issues-close" size="md" color="#444" />
+                            </View>
+                            <View style={{flex:1,paddingLeft:15}}>
+                                <Text>通讯录</Text>
+                            </View>
+                            <View>
+                                <Icon name="right" size="md" color="#444" />
+                            </View>
+                        </View>
+                    </TouchableOpacity>
+                    <View style={{height:30}}>
+
+                    </View>
                 </ScrollView>
             </View>
         )

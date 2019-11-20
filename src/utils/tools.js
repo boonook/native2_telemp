@@ -1,7 +1,7 @@
 import {Api} from "./net/Request";
 import {Moment} from "moment";
-import {Dimensions} from 'react-native';
-import {Modal,ActionSheet} from '@ant-design/react-native';
+import {Dimensions, Linking} from 'react-native';
+import {Modal,ActionSheet,Toast} from '@ant-design/react-native';
 import ImagePicker  from 'react-native-image-picker';
 import moment from 'moment';
 const alert = Modal.alert;
@@ -452,3 +452,15 @@ export const getTreeNodeNameWithValues = (group: TreeItem[], values: string | st
     });
     return found;
 };
+
+////拨打电话
+export const call = (phone) => {
+    const url = `tel:${phone}`;
+    Linking.canOpenURL(url)
+        .then(supported => {
+            if (!supported) {
+                Toast.info(`您的设备不支持该功能，请手动拨打 ${phone}`, 1.5);
+            }
+            return Linking.openURL(url);
+        }).catch(err => Toast.info(`出错了：${err}`, 1.5));
+}

@@ -1,4 +1,4 @@
-import {Api} from "./net/Request";
+import {Api} from "./Request";
 import {Moment} from "moment";
 import {Dimensions, Linking} from 'react-native';
 import {Modal,ActionSheet,Toast} from '@ant-design/react-native';

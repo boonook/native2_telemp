@@ -1,18 +1,11 @@
-import auth from "./auth";
-import home from "./home";
+import UserState from '@src/store/user'
+import MenuState from '@src/store/menu'
 
-const models = [
-    auth,
-    home,
-];
-/**
- * 初始化模型
- * @param DvaApp dva实例
- */
-const initModels = DvaApp => {
-    models.map((m)=>{
-        DvaApp.model(m)
-    })
-};
+class store {
+    constructor() {
+        this.userState = new UserState();
+        this.menuState = new MenuState();
+    }
+}
 
-export default initModels
+export default new store();
